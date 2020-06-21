@@ -1,4 +1,5 @@
 import { BackTop, Layout, Typography } from 'antd';
+import TypesNav from './types-nav';
 
 const { Content, Header, Footer, Sider } = Layout;
 const { Title } = Typography;
@@ -16,6 +17,7 @@ export default function MainLayout({ children }) {
         }}
       >
         <Title level={4}>Pokemon By Types</Title>
+        <TypesNav />
       </Sider>
       <Layout style={{ marginLeft: 200 }}>
         <Header>
