@@ -43,6 +43,7 @@ export default function TypesNav() {
             router.push(`/?type=${value.name}`);
           }}
           style={{
+            fontWeight: 'bold',
             borderRadius: '7px',
             background:
               value.name === activeNav ? getColor(value.name) : '#ecececa6',
