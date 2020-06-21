@@ -1,218 +1,184 @@
-import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import { Col, message, notification, Spin } from 'antd';
+import InfiniteScroll from 'react-infinite-scroller';
+import PokemonList from '../components/pokemon-list';
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Index({ type }) {
+  const [pokemons, setPokemons] = useState([]);
+  const [totalPokemon, setTotalPokemon] = useState(0);
+  const [initLoading, setInitLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
 
-      <main>
-        <h1 className="title">
-          Welcome to
-          {' '}
-          <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+  useEffect(() => {
+    async function loadData() {
+      let endpoint = '';
 
-        <p className="description">
-          Get started by editing
-          {' '}
-          <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by
-          {' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>
-        {`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+      try {
+        if (type !== undefined) {
+          endpoint = `https://pokeapi.co/api/v2/type/${type}`;
+        } else {
+          endpoint = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${pokemons.length}`;
         }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        const response = await fetch(endpoint, { method: 'GET' });
+        const data = await response.json();
+
+        let pokemonList = pokemons;
+        let count = 0;
+        let results = [];
+
+        if (type !== undefined) {
+          pokemonList = [];
+          count = data.pokemon.length;
+          results = data.pokemon;
+        } else {
+          count = data.count;
+          results = data.results;
         }
+        setTotalPokemon(count);
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+        for (let i = 0; i < results.length; i++) {
+          const pokemonName =
+            type !== undefined ? results[i].pokemon.name : results[i].name;
 
-        footer img {
-          margin-left: 0.5rem;
-        }
+          const detailEndpoint = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+          const detailResponse = await fetch(detailEndpoint, {
+            method: 'GET',
+          });
+          const detailData = await detailResponse.json();
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+          const detailedPokemon = {
+            id: detailData.id,
+            name: detailData.name,
+            height: detailData.height,
+            weight: detailData.weight,
+            image: detailData.sprites.front_default,
+            stats: detailData.stats,
+            types: detailData.types,
+          };
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
+          if (type !== undefined) {
+            setInitLoading(false);
+            pokemonList.push(detailedPokemon);
+            setPokemons(pokemonList);
+          } else {
+            pokemonList.push(detailedPokemon);
           }
         }
-      `}
-      </style>
 
-      <style jsx global>
-        {`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+        setPokemons(pokemonList);
+        setIsLoading(false);
+        setInitLoading(false);
+      } catch (err) {
+        notification.error({
+          message: 'Error',
+          description: 'Please reload your browser',
+        });
+      }
+    }
+
+    if (type !== undefined) {
+      setInitLoading(true);
+      setIsLoading(true);
+      setHasMore(false);
+    }
+
+    loadData();
+  }, [type]);
+
+  const handleLoadMore = async () => {
+    setIsLoading(true);
+    if (pokemons.length > totalPokemon) {
+      message.warning('Pokemon List loaded all');
+      setHasMore(false);
+      setIsLoading(false);
+      return;
+    }
+    if (isLoading) {
+      const endpoint = `https://pokeapi.co/api/v2/pokemon?limit=10&offset=${pokemons.length}`;
+
+      try {
+        let pokemonList = pokemons;
+
+        const response = await fetch(endpoint, { method: 'GET' });
+        const data = await response.json();
+        const { results } = data;
+
+        for (let i = 0; i < results.length; i++) {
+          const detailEndpoint = `https://pokeapi.co/api/v2/pokemon/${results[i].name}`;
+          const detailResponse = await fetch(detailEndpoint, {
+            method: 'GET',
+          });
+          const detailData = await detailResponse.json();
+          const detailedPokemon = {
+            id: detailData.id,
+            name: detailData.name,
+            height: detailData.height,
+            weight: detailData.weight,
+            image: detailData.sprites.front_default,
+            stats: detailData.stats,
+            types: detailData.types,
+          };
+
+          pokemonList.push(detailedPokemon);
         }
 
-        * {
-          box-sizing: border-box;
-        }
-      `}
-      </style>
-    </div>
+        setPokemons(pokemonList);
+        setIsLoading(false);
+      } catch (err) {
+        notification.error({
+          message: 'Error',
+          description: 'Please reload your browser',
+        });
+      }
+    }
+  };
+
+  if (initLoading) {
+    return (
+      <div
+        style={{
+          width: '100%',
+          textAlign: 'center',
+        }}
+      >
+        <Spin tip="Loading..." />
+      </div>
+    );
+  }
+
+  return (
+    <Col
+      xs={{ span: 24 }}
+      sm={{ offset: 1, span: 22 }}
+      md={{ offset: 3, span: 20 }}
+      xl={{ offset: 4, span: 18 }}
+      xxl={{ offset: 5, span: 16 }}
+    >
+      <InfiniteScroll loadMore={handleLoadMore} hasMore={hasMore}>
+        <PokemonList pokemons={pokemons} isLoading={isLoading} />
+        {isLoading && hasMore && (
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '40px',
+              width: '100%',
+              textAlign: 'center',
+            }}
+          >
+            <Spin tip="Loading..." />
+          </div>
+        )}
+      </InfiniteScroll>
+    </Col>
   );
 }
+
+Index.getInitialProps = async (ctx) => {
+  const { type } = ctx.query;
+
+  return {
+    type,
+  };
+};
