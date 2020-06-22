@@ -154,7 +154,7 @@ const pokemons = [
   },
 ];
 
-it('tag type render correctly', () => {
+it('pokemon list render correctly', () => {
   const tree = renderer
     .create(<PokemonList pokemons={pokemons} isLoading={false} />)
     .toJSON();
