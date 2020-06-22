@@ -1,3 +1,4 @@
+import React from 'react';
 import { List, Progress, Card, Row, Col, Typography, Skeleton } from 'antd';
 import TypesTag from '../helper/types-tag';
 import getColor from '../helper/get-color';

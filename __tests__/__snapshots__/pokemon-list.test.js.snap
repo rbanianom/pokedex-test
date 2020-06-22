@@ -1,0 +1,1010 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tag type render correctly 1`] = `
+<div
+  className="ant-list ant-list-split ant-list-grid"
+>
+  <div
+    className="ant-spin-nested-loading"
+  >
+    <div
+      className="ant-spin-container"
+    >
+      <div
+        className="ant-row"
+        style={
+          Object {
+            "marginLeft": -8,
+            "marginRight": -8,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "maxWidth": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="ant-col"
+            style={
+              Object {
+                "flex": "1 1 auto",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+              }
+            }
+          >
+            <div
+              className="ant-list-item"
+            >
+              <div
+                className="ant-card ant-card-bordered"
+                style={
+                  Object {
+                    "background": "linear-gradient(to right, #72c13459, #90439259)",
+                    "backgroundImage": "linear-gradient(to right, #72c13459, #90439259)",
+                    "borderRadius": "10px",
+                  }
+                }
+              >
+                <div
+                  className="ant-card-body"
+                  style={Object {}}
+                >
+                  <div
+                    className="ant-row"
+                    style={Object {}}
+                  >
+                    <div
+                      className="ant-col ant-col-lg-24 ant-col-xl-11"
+                      style={
+                        Object {
+                          "marginBottom": "10px",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-row"
+                        style={Object {}}
+                      >
+                        <div
+                          className="ant-col ant-col-5"
+                          style={Object {}}
+                        >
+                          <div
+                            className="ant-card ant-card-bordered"
+                            style={
+                              Object {
+                                "borderRadius": "50px",
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-card-body"
+                              style={
+                                Object {
+                                  "borderRadius": "50px",
+                                  "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                                  "padding": 0,
+                                }
+                              }
+                            >
+                              <p
+                                style={
+                                  Object {
+                                    "fontWeight": "bold",
+                                    "margin": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                0.7m
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="ant-col ant-col-14"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "height": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="bulbasaur"
+                              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                              style={
+                                Object {
+                                  "height": "auto",
+                                  "maxWidth": "135px",
+                                  "position": "relative",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <h4
+                              className="ant-typography"
+                              style={
+                                Object {
+                                  "WebkitLineClamp": null,
+                                }
+                              }
+                            >
+                              #1 BULBASAUR
+                            </h4>
+                            <span
+                              className="ant-tag ant-tag-has-color"
+                              style={
+                                Object {
+                                  "backgroundColor": "#72c134",
+                                }
+                              }
+                            >
+                              Grass
+                            </span>
+                            <span
+                              className="ant-tag ant-tag-has-color"
+                              style={
+                                Object {
+                                  "backgroundColor": "#904392",
+                                }
+                              }
+                            >
+                              Poison
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="ant-col ant-col-5"
+                          style={Object {}}
+                        >
+                          <div
+                            className="ant-card ant-card-bordered"
+                            style={
+                              Object {
+                                "borderRadius": "50px",
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-card-body"
+                              style={
+                                Object {
+                                  "borderRadius": "50px",
+                                  "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                                  "padding": 0,
+                                }
+                              }
+                            >
+                              <p
+                                style={
+                                  Object {
+                                    "fontWeight": "bold",
+                                    "margin": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                6.9kg
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="ant-col ant-col-lg-24 ant-col-xl-13"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-row"
+                        style={Object {}}
+                      >
+                        <div
+                          className="ant-col ant-col-8"
+                          style={
+                            Object {
+                              "textAlign": "right",
+                            }
+                          }
+                        >
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Hp
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Attack
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Defense
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Special-attack
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Special-defense
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Speed
+                          </p>
+                        </div>
+                        <div
+                          className="ant-col ant-col-3"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <p>
+                            45
+                          </p>
+                          <p>
+                            49
+                          </p>
+                          <p>
+                            49
+                          </p>
+                          <p>
+                            65
+                          </p>
+                          <p>
+                            65
+                          </p>
+                          <p>
+                            45
+                          </p>
+                        </div>
+                        <div
+                          className="ant-col ant-col-13"
+                          style={Object {}}
+                        >
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#e35655",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "17.647058823529413%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#e35655",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "19.215686274509803%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#e35655",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "19.215686274509803%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "25.49019607843137%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "25.49019607843137%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#e35655",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "17.647058823529413%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "maxWidth": "100%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="ant-col"
+            style={
+              Object {
+                "flex": "1 1 auto",
+                "paddingLeft": 8,
+                "paddingRight": 8,
+              }
+            }
+          >
+            <div
+              className="ant-list-item"
+            >
+              <div
+                className="ant-card ant-card-bordered"
+                style={
+                  Object {
+                    "background": "linear-gradient(to right, #df350959, #94a6f359)",
+                    "backgroundImage": "linear-gradient(to right, #df350959, #94a6f359)",
+                    "borderRadius": "10px",
+                  }
+                }
+              >
+                <div
+                  className="ant-card-body"
+                  style={Object {}}
+                >
+                  <div
+                    className="ant-row"
+                    style={Object {}}
+                  >
+                    <div
+                      className="ant-col ant-col-lg-24 ant-col-xl-11"
+                      style={
+                        Object {
+                          "marginBottom": "10px",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-row"
+                        style={Object {}}
+                      >
+                        <div
+                          className="ant-col ant-col-5"
+                          style={Object {}}
+                        >
+                          <div
+                            className="ant-card ant-card-bordered"
+                            style={
+                              Object {
+                                "borderRadius": "50px",
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-card-body"
+                              style={
+                                Object {
+                                  "borderRadius": "50px",
+                                  "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                                  "padding": 0,
+                                }
+                              }
+                            >
+                              <p
+                                style={
+                                  Object {
+                                    "fontWeight": "bold",
+                                    "margin": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                1.7m
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="ant-col ant-col-14"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "height": "100%",
+                              }
+                            }
+                          >
+                            <img
+                              alt="charizard"
+                              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+                              style={
+                                Object {
+                                  "height": "auto",
+                                  "maxWidth": "135px",
+                                  "position": "relative",
+                                  "width": "100%",
+                                }
+                              }
+                            />
+                            <h4
+                              className="ant-typography"
+                              style={
+                                Object {
+                                  "WebkitLineClamp": null,
+                                }
+                              }
+                            >
+                              #6 CHARIZARD
+                            </h4>
+                            <span
+                              className="ant-tag ant-tag-has-color"
+                              style={
+                                Object {
+                                  "backgroundColor": "#df3509",
+                                }
+                              }
+                            >
+                              Fire
+                            </span>
+                            <span
+                              className="ant-tag ant-tag-has-color"
+                              style={
+                                Object {
+                                  "backgroundColor": "#94a6f3",
+                                }
+                              }
+                            >
+                              Flying
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="ant-col ant-col-5"
+                          style={Object {}}
+                        >
+                          <div
+                            className="ant-card ant-card-bordered"
+                            style={
+                              Object {
+                                "borderRadius": "50px",
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-card-body"
+                              style={
+                                Object {
+                                  "borderRadius": "50px",
+                                  "boxShadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+                                  "padding": 0,
+                                }
+                              }
+                            >
+                              <p
+                                style={
+                                  Object {
+                                    "fontWeight": "bold",
+                                    "margin": 0,
+                                    "textAlign": "center",
+                                  }
+                                }
+                              >
+                                90.5kg
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="ant-col ant-col-lg-24 ant-col-xl-13"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="ant-row"
+                        style={Object {}}
+                      >
+                        <div
+                          className="ant-col ant-col-8"
+                          style={
+                            Object {
+                              "textAlign": "right",
+                            }
+                          }
+                        >
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Hp
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Attack
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Defense
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Special-attack
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Special-defense
+                          </p>
+                          <p
+                            style={
+                              Object {
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Speed
+                          </p>
+                        </div>
+                        <div
+                          className="ant-col ant-col-3"
+                          style={
+                            Object {
+                              "textAlign": "center",
+                            }
+                          }
+                        >
+                          <p>
+                            78
+                          </p>
+                          <p>
+                            84
+                          </p>
+                          <p>
+                            78
+                          </p>
+                          <p>
+                            109
+                          </p>
+                          <p>
+                            85
+                          </p>
+                          <p>
+                            100
+                          </p>
+                        </div>
+                        <div
+                          className="ant-col ant-col-13"
+                          style={Object {}}
+                        >
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "30.58823529411765%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "32.94117647058823%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "30.58823529411765%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6ca2a",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "42.745098039215684%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6a52d",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "33.333333333333336%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            style={
+                              Object {
+                                "marginBottom": "1em",
+                                "marginTop": 0,
+                              }
+                            }
+                          >
+                            <div
+                              className="ant-progress ant-progress-line ant-progress-status-active ant-progress-default"
+                            >
+                              <div
+                                className="ant-progress-outer"
+                              >
+                                <div
+                                  className="ant-progress-inner"
+                                >
+                                  <div
+                                    className="ant-progress-bg"
+                                    style={
+                                      Object {
+                                        "background": "#f6ca2a",
+                                        "borderRadius": "",
+                                        "height": 8,
+                                        "width": "39.21568627450981%",
+                                      }
+                                    }
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

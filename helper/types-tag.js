@@ -1,3 +1,4 @@
+import React from 'react';
 import { Tag } from 'antd';
 import { capitalizeFirstLetter } from '../helper/string-format';
 import getColor from '../helper/get-color';

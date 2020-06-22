@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tag type render correctly 1`] = `
+Array [
+  <span
+    className="ant-tag ant-tag-has-color"
+    style={
+      Object {
+        "backgroundColor": "#72c134",
+      }
+    }
+  >
+    Grass
+  </span>,
+  <span
+    className="ant-tag ant-tag-has-color"
+    style={
+      Object {
+        "backgroundColor": "#904392",
+      }
+    }
+  >
+    Poison
+  </span>,
+]
+`;
