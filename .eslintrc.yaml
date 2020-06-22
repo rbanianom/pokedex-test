@@ -15,6 +15,7 @@ plugins:
   - react
   - jsx-a11y
 rules:
+  no-debugger: off
   object-curly-newline: 0
   no-plusplus:
     - 1
