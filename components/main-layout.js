@@ -21,30 +21,32 @@ export default function MainLayout({ children }) {
       <Sider
         theme="light"
         breakpoint="lg"
-        collapsedWidth={0}
+        collapsedWidth={isResponsive ? 0 : 250}
         width={255}
-        collapsible
+        collapsible={isResponsive}
         collapsed={isMenuCollapse}
         onBreakpoint={(broken) => {
           setIsResponsive(broken);
         }}
         trigger={null}
       >
-        <span
-          className={
-            'ant-layout-sider-zero-width-trigger ant-layout-sider-zero-width-trigger-left'
-          }
-        >
-          {isMenuCollapse ? (
-            <MenuUnfoldOutlined
-              onClick={() => setMenuCollapse(!isMenuCollapse)}
-            />
-          ) : (
-            <MenuFoldOutlined
-              onClick={() => setMenuCollapse(!isMenuCollapse)}
-            />
-          )}
-        </span>
+        {isResponsive && (
+          <span
+            className={
+              'ant-layout-sider-zero-width-trigger ant-layout-sider-zero-width-trigger-left'
+            }
+          >
+            {isMenuCollapse ? (
+              <MenuUnfoldOutlined
+                onClick={() => setMenuCollapse(!isMenuCollapse)}
+              />
+            ) : (
+              <MenuFoldOutlined
+                onClick={() => setMenuCollapse(!isMenuCollapse)}
+              />
+            )}
+          </span>
+        )}
         <Title level={4}>Pokemon By Types</Title>
         <TypesNav
           isResponsive={isResponsive}
