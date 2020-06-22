@@ -18,18 +18,17 @@ export default function Index({ type }) {
         if (type !== undefined) {
           endpoint = `https://pokeapi.co/api/v2/type/${type}`;
         } else {
-          endpoint = `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${pokemons.length}`;
+          endpoint = `https://pokeapi.co/api/v2/pokemon?limit=20`;
         }
 
         const response = await fetch(endpoint, { method: 'GET' });
         const data = await response.json();
 
-        let pokemonList = pokemons;
+        let pokemonList = [];
         let count = 0;
         let results = [];
 
         if (type !== undefined) {
-          pokemonList = [];
           count = data.pokemon.length;
           results = data.pokemon;
         } else {
@@ -79,11 +78,11 @@ export default function Index({ type }) {
     }
 
     if (type !== undefined) {
-      setInitLoading(true);
-      setIsLoading(true);
       setHasMore(false);
     }
 
+    setInitLoading(true);
+    setIsLoading(true);
     loadData();
   }, [type]);
 
@@ -158,18 +157,6 @@ export default function Index({ type }) {
     >
       <InfiniteScroll loadMore={handleLoadMore} hasMore={hasMore}>
         <PokemonList pokemons={pokemons} isLoading={isLoading} />
-        {isLoading && hasMore && (
-          <div
-            style={{
-              position: 'absolute',
-              bottom: '40px',
-              width: '100%',
-              textAlign: 'center',
-            }}
-          >
-            <Spin tip="Loading..." />
-          </div>
-        )}
       </InfiniteScroll>
     </Col>
   );
