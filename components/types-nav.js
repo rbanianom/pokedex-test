@@ -4,7 +4,7 @@ import { Spin, List, Button } from 'antd';
 import { capitalizeFirstLetter } from '../helper/string-format';
 import getColor from '../helper/get-color';
 
-export default function TypesNav({ isResponsive }) {
+export default function TypesNav({ isResponsive, handleNavButton }) {
   const router = useRouter();
   const [activeNav, setActiveNav] = useState('');
   const [data, setData] = useState(null);
@@ -35,6 +35,13 @@ export default function TypesNav({ isResponsive }) {
     });
   };
 
+  const handleNav = (e, nav) => {
+    e.preventDefault();
+    handleNavButton();
+    setActiveNav(nav);
+    router.push(`/?type=${nav}`);
+  };
+
   if (data === null) {
     return <Spin />;
   }
@@ -53,11 +60,7 @@ export default function TypesNav({ isResponsive }) {
             className="custom-button"
             block
             size="large"
-            onClick={(event) => {
-              event.preventDefault();
-              setActiveNav(item.name);
-              router.push(`/?type=${item.name}`);
-            }}
+            onClick={(event) => handleNav(event, item.name)}
             style={{
               fontWeight: 'bold',
               borderRadius: '7px',

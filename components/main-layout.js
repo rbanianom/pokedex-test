@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BackTop, Layout, Typography } from 'antd';
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import TypesNav from './types-nav';
 
 const { Content, Header, Footer, Sider } = Layout;
@@ -7,21 +8,48 @@ const { Title } = Typography;
 
 export default function MainLayout({ children }) {
   const [isResponsive, setIsResponsive] = useState(false);
+  const [isMenuCollapse, setMenuCollapse] = useState(true);
+
+  const handleNavButton = () => {
+    setMenuCollapse(true);
+  };
 
   const overflow = isResponsive ? 'initial' : 'auto';
 
   return (
     <Layout>
       <Sider
+        theme="light"
         breakpoint="lg"
         collapsedWidth={0}
         width={255}
+        collapsible
+        collapsed={isMenuCollapse}
         onBreakpoint={(broken) => {
           setIsResponsive(broken);
         }}
+        trigger={null}
       >
+        <span
+          className={
+            'ant-layout-sider-zero-width-trigger ant-layout-sider-zero-width-trigger-left'
+          }
+        >
+          {isMenuCollapse ? (
+            <MenuUnfoldOutlined
+              onClick={() => setMenuCollapse(!isMenuCollapse)}
+            />
+          ) : (
+            <MenuFoldOutlined
+              onClick={() => setMenuCollapse(!isMenuCollapse)}
+            />
+          )}
+        </span>
         <Title level={4}>Pokemon By Types</Title>
-        <TypesNav isResponsive={isResponsive} />
+        <TypesNav
+          isResponsive={isResponsive}
+          handleNavButton={handleNavButton}
+        />
       </Sider>
       <Layout style={{ marginLeft: isResponsive ? '0px' : '220px' }}>
         <Header>
@@ -53,7 +81,6 @@ export default function MainLayout({ children }) {
           .ant-layout-sider{
             z-index: 1;
             overflow: ${overflow};
-            background: white;
             height: 100vh;
             position: fixed;
             left: 0;
