@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Tag, Spin, List, Button } from 'antd';
+import { Spin, List, Button } from 'antd';
 import { capitalizeFirstLetter } from '../helper/string-format';
 import getColor from '../helper/get-color';
 
-export default function TypesNav() {
+export default function TypesNav({ isResponsive }) {
   const router = useRouter();
   const [activeNav, setActiveNav] = useState('');
   const [data, setData] = useState(null);
@@ -26,43 +26,66 @@ export default function TypesNav() {
     loadData();
   }, []);
 
+  const handleAll = (e) => {
+    e.preventDefault();
+    setActiveNav('');
+    router.push({
+      pathname: '/',
+      query: {},
+    });
+  };
+
   if (data === null) {
     return <Spin />;
   }
 
-  const nav = data.map((value, key) => {
-    return (
-      <List.Item key={key}>
+  return (
+    <List
+      grid={{
+        gutter: 16,
+        column: isResponsive ? 2 : 1,
+      }}
+      style={{ padding: '10px', textAlign: 'center' }}
+      dataSource={data}
+      renderItem={(item) => (
+        <List.Item>
+          <Button
+            className="custom-button"
+            block
+            size="large"
+            onClick={(event) => {
+              event.preventDefault();
+              setActiveNav(item.name);
+              router.push(`/?type=${item.name}`);
+            }}
+            style={{
+              fontWeight: 'bold',
+              borderRadius: '7px',
+              background:
+                item.name === activeNav ? getColor(item.name) : '#ecececa6',
+              borderColor:
+                item.name === activeNav ? getColor(item.name) : '#ecececa6',
+              color: item.name === activeNav ? 'white' : getColor(item.name),
+            }}
+          >
+            {capitalizeFirstLetter(item.name)}
+          </Button>
+        </List.Item>
+      )}
+    >
+      <List.Item>
         <Button
-          className="custom-button"
           size="large"
           block
-          onClick={(event) => {
-            event.preventDefault();
-            setActiveNav(value.name);
-            router.push(`/?type=${value.name}`);
-          }}
+          onClick={(event) => handleAll(event)}
           style={{
             fontWeight: 'bold',
             borderRadius: '7px',
-            background:
-              value.name === activeNav ? getColor(value.name) : '#ecececa6',
-            borderColor:
-              value.name === activeNav ? getColor(value.name) : '#ecececa6',
-            color: value.name === activeNav ? 'white' : getColor(value.name),
           }}
         >
-          {capitalizeFirstLetter(value.name)}
+          All
         </Button>
       </List.Item>
-    );
-  });
-  return (
-    <List
-      grid={{ column: 24 }}
-      style={{ padding: '10px', textAlign: 'center' }}
-    >
-      {nav}
     </List>
   );
 }

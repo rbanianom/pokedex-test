@@ -31,7 +31,11 @@ export default function PokemonList({ pokemons, isLoading }) {
                 }}
               >
                 <Row>
-                  <Col span={11}>
+                  <Col
+                    lg={24}
+                    xl={11}
+                    style={{ width: '100%', marginBottom: '10px' }}
+                  >
                     <Row>
                       <Col span={5}>
                         <MeasurementCard value={item.height} measurement="m" />
@@ -49,7 +53,7 @@ export default function PokemonList({ pokemons, isLoading }) {
                       </Col>
                     </Row>
                   </Col>
-                  <Col span={13}>
+                  <Col lg={24} xl={13} style={{ width: '100%' }}>
                     <PokemonStats stats={item.stats} />
                   </Col>
                 </Row>
@@ -64,35 +68,7 @@ export default function PokemonList({ pokemons, isLoading }) {
             borderRadius: '10px',
           }}
         >
-          <Row>
-            <Col span={11}>
-              <Row>
-                <Col span={5}>
-                  <Skeleton.Button active={true} />
-                </Col>
-                <Col span={14} style={{ textAlign: 'center', padding: '20px' }}>
-                  <Skeleton.Avatar active={true} size="large" />
-                  <Skeleton.Input active={true} style={{ marginTop: '30px' }} />
-                </Col>
-                <Col span={5}>
-                  <Skeleton.Button active={true} />
-                </Col>
-              </Row>
-            </Col>
-            <Col span={13}>
-              <Row>
-                <Col span={8} style={{ paddingLeft: '10px' }}>
-                  <Skeleton.Input active={true} style={{ height: '150px' }} />
-                </Col>
-                <Col span={3} style={{ paddingLeft: '10px' }}>
-                  <Skeleton.Input active={true} style={{ height: '150px' }} />
-                </Col>
-                <Col span={13} style={{ paddingLeft: '10px' }}>
-                  <Skeleton.Input active={true} style={{ height: '150px' }} />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          <Skeleton loading={true} active avatar />
         </Card>
       )}
     </>
@@ -132,7 +108,7 @@ function Pokemon({ id, name, image, types }) {
       <img
         style={imgStyle}
         alt={name}
-        src={image !== null ? image : window.location.origin + '/pokeball.png'}
+        src={image !== null ? image : `${window.location.origin}/pokeball.png`}
       />
       <Title level={4}>{`#${id} ${name.toUpperCase()}`}</Title>
       <TypesTag types={types} />

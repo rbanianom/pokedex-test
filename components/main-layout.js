@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BackTop, Layout, Typography } from 'antd';
 import TypesNav from './types-nav';
 
@@ -5,21 +6,24 @@ const { Content, Header, Footer, Sider } = Layout;
 const { Title } = Typography;
 
 export default function MainLayout({ children }) {
+  const [isResponsive, setIsResponsive] = useState(false);
+
+  const overflow = isResponsive ? 'initial' : 'auto';
+
   return (
     <Layout>
       <Sider
-        style={{
-          background: 'white',
-          overflow: 'auto',
-          height: '100vh',
-          position: 'fixed',
-          left: 0,
+        breakpoint="lg"
+        collapsedWidth={0}
+        width={255}
+        onBreakpoint={(broken) => {
+          setIsResponsive(broken);
         }}
       >
         <Title level={4}>Pokemon By Types</Title>
-        <TypesNav />
+        <TypesNav isResponsive={isResponsive} />
       </Sider>
-      <Layout style={{ marginLeft: 200 }}>
+      <Layout style={{ marginLeft: isResponsive ? '0px' : '220px' }}>
         <Header>
           <Title level={1}>POKEDEX</Title>
         </Header>
@@ -45,6 +49,14 @@ export default function MainLayout({ children }) {
             .ant-layout-content {
               padding: 20px 0px;
             }
+          }
+          .ant-layout-sider{
+            z-index: 1;
+            overflow: ${overflow};
+            background: white;
+            height: 100vh;
+            position: fixed;
+            left: 0;
           }
         `}
       </style>
